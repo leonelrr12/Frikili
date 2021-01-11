@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'signikabold';
+    src: url('../fonts/signika-bold-webfont.woff2') format('woff2'),
+    url('../fonts/signika-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'signikaregular';
+    src: url('../fonts/signika-regular-webfont.woff2') format('woff2'),
+    url('../fonts/signika-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'remachine_script_personal_uRg';
+    src: url('../fonts/remachinescript_personal_use-webfont.woff2') format('woff2'),
+    url('../fonts/remachinescript_personal_use-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: signikaregular;
+    background-color: #b8ebda;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: signikabold;
+}
+
+.navbar, .navigation{
+    font-family: signikabold;
+    font-size: 1.5em;
+    background-color: #556363 !important;
+    margin-bottom: 20px;
+}
+
+.navbar-brand{
+    font-family: remachine_script_personal_uRg;
+    font-size: 2em;
+    margin-left: 20px;
+}
+
+.navbar form {
+    display: flex;
+    margin-left: auto;
+}
+
+input[type="search"] {
+    margin-right: 15px;
+}
+
+form button {
+    margin-right: 20px;
+}
+
+.cursor:hover{
+    cursor: pointer;
+}

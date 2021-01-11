@@ -2,11 +2,46 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Frikili!{% endblock %}</title>
+        {% block stylesheets %}
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+            <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="{{ path('dashboard') }}">Frikili</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ path('new-post') }}">Crear Post</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('mis-posts') }}">Mis Post</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_logout') }}">Salir</a>
+                        </li>
+                    </ul>
+                    <form class="my-2 my-lg-0">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+            </div>
+        {% endblock %}
+        {% block javascripts %}
+            <!-- Option 1: Bootstrap Bundle with Popper -->
+            <script src="{{  asset('js/jquery-3.5.1.min.js') }}"></script>
+            <script src="{{  asset('js/bootstrap.min.js') }}"></script>
+        {% endblock %}
     </body>
 </html>

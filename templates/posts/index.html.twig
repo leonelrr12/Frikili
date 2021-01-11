@@ -1,12 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PostsController!{% endblock %}
+{% block title %} {{ parent() }} - Crear Post{% endblock %}
 
 {% block body %}
-{#    {% for message in app.flashes('success') %}
-        <div class="alert alert-success">
-            {{ message }}
-        </div>
-    {% endfor %}#}
-    {{ form(form) }}
+    {{ parent() }}
+    <div class="container">
+        {#    {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}#}
+        {{ form(form) }}
+    </div>
 {% endblock %}

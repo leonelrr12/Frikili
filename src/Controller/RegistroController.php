@@ -13,7 +13,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class RegistroController extends AbstractController
 {
     /**
-     * @Route("/", name="registro")
+     * @Route("/registro", name="registro")
      */
     public function index(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {

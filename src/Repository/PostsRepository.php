@@ -22,6 +22,15 @@ class PostsRepository extends ServiceEntityRepository
     public function getAllPosts() {
         return $this->getEntityManager()
             ->createQuery('
+                SELECT p.id, p.titulo, p.foto, p.fecha_publicacion, u.nombre
+                FROM App:Posts p 
+                JOIN p.user u
+            ');
+    }
+
+    public function getMyPosts($user) {
+        return $this->getEntityManager()
+            ->createQuery('
                 SELECT p.id, p.titulo, p.foto, p.fecha_publicacion
                 FROM App:Posts p 
             ');

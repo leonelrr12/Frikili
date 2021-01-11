@@ -32,10 +32,20 @@ class Comentarios
      */
     private $user;
 
+
     /**
      * @ORM\ManyToOne(targetEntity=Posts::class, inversedBy="Comentarios")
      */
     private $posts;
+
+    /**
+     * Comentarios constructor.
+     * @param $fecha_publicacion
+     */
+    public function __construct()
+    {
+        $this->fecha_publicacion = new \DateTime();
+    }
 
     public function getId(): ?int
     {

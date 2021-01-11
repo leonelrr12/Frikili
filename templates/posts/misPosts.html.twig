@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} {{ parent() }} {% endblock %}
+{% block title %} {{ parent() }} - Mis Posts {% endblock %}
 {% block body %}
     {{ parent() }}
     <div class="container">
@@ -11,7 +11,6 @@
                         <div class="d-flex bd-highlight">
                             <div class="p-2 flex-grow-1 bd-highlight">
                                 <h3>{{post.titulo}}</h3>
-                                <div class="my-3 bg-yellow"> <i class="fa fa-user"></i><strong> Creado por {{post.nombre}}</strong></div>
                                 <div class=" bg-green"><i class="far fa-clock"></i> <strong>Fecha de publicación: {{ post.fecha_publicacion | date }}</strong></div>
                             </div>
                             <div class="p-2 bd-highlight">
