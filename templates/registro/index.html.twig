@@ -12,7 +12,22 @@
         <div class="row h-100 justify-content-center align-items-center">
             <div class="col-6 bg-white rounded my-5 p-5">
                 <h1>Registro</h1>
-                {{ form(formulario) }}
+                {{ form_start(formulario) }}
+                <div class="my-custom-class-for-errors">
+                    {{ form_errors(formulario) }}
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        {{ form_label(formulario.email, 'Email:') }}
+                        {{ form_widget(formulario.email, {'attr': {'class': 'campo'}}) }}
+                        {{ form_label(formulario.password, 'Password:') }}
+                        {{ form_widget(formulario.password, {'attr': {'class': 'campo'}}) }}
+                        {{ form_label(formulario.nombre, 'Nombre:') }}
+                        {{ form_widget(formulario.nombre, {'attr': {'class': 'campo'}}) }}
+                    </div>
+                </div>
+                {{ form_end(formulario) }}
             </div>
         </div>
     </div>

@@ -28,12 +28,13 @@ class PostsRepository extends ServiceEntityRepository
             ');
     }
 
-    public function getMyPosts($user) {
+    public function getMyPosts($user_id) {
         return $this->getEntityManager()
             ->createQuery('
                 SELECT p.id, p.titulo, p.foto, p.fecha_publicacion
                 FROM App:Posts p 
-            ');
+                WHERE p.user =:user_id
+            ')->setParameter('user_id', $user_id);
     }
 
     // /**

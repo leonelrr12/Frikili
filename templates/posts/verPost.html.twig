@@ -32,8 +32,34 @@
             {{ post.contenido }}
         </div>
         <hr>
+    </div>
+    <div class="container p-3">
+        {{ form_start(form) }}
+        <div class="my-custom-class-for-errors">
+            {{ form_errors(form) }}
+        </div>
 
+        <div class="row">
+            <div class="col">
+                {{ form_label(form.comentario, 'Comentario:') }}
+                {{ form_widget(form.comentario, {'attr': {'class': 'campo'}}) }}
+            </div>
+        </div>
+        {{ form_end(form) }}
+
+        <h3 class="mt-4">Comentarios:</h3>
+        {% for comentario in comentarios %}
+            <div class="rounded bg-white my-2 p-3 border">
+                <h5>{{ comentario.nombre }} Dijo:</h5>
+                <div class="w-100">{{ comentario.comentario }}</div>
+            </div>
+        {% endfor %}
     </div>
 
-    {{ form( form ) }}
+    <div class="d-flex justify-content-center">
+        <div class="navigation">
+            {{ knp_pagination_render(comentarios) }}
+        </div>
+    </div>
+
 {% endblock %}

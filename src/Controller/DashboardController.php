@@ -18,6 +18,8 @@ class DashboardController extends AbstractController
     public function index(PaginatorInterface $paginator, Request $request): Response
     {
         $user = $this->getUser();
+        // Valida usuario dentro
+        if(!$user) return $this->redirectToRoute('app_login');
         $em = $this->getDoctrine()->getManager();
         //$posts = $em->getRepository(Posts::class)->findAll();
         $query = $em->getRepository(Posts::class)->getAllPosts();

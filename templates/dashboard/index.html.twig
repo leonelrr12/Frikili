@@ -28,7 +28,7 @@
                     <h4>Comentarios</h4>
                     {% for comentario in comentarios %}
                         <div class="bg-white my-2">
-                            <a href="{{ path('VerPost',{id:comentario.id}) }}">{{ comentario.titulo }}</a>
+                           <a href="{{ path('ver-post',{id:comentario.id}) }} ">{{ comentario.comentario }}</a>
                         </div>
                     {% endfor %}
                 </div>

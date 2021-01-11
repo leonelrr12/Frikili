@@ -5,11 +5,21 @@
 {% block body %}
     {{ parent() }}
     <div class="container">
-        {#    {% for message in app.flashes('success') %}
-            <div class="alert alert-success">
-                {{ message }}
+        {{ form_start(form) }}
+        <div class="my-custom-class-for-errors">
+            {{ form_errors(form) }}
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_label(form.titulo, 'Titulo:') }}
+                {{ form_widget(form.titulo, {'attr': {'class': 'campo'}}) }}
+                {{ form_label(form.foto, 'Foto:') }}
+                {{ form_widget(form.foto, {'attr': {'class': 'campo'}}) }}
+                {{ form_label(form.contenido, 'Contenido:') }}
+                {{ form_widget(form.contenido, {'attr': {'class': 'campo'}}) }}
             </div>
-        {% endfor %}#}
-        {{ form(form) }}
+        </div>
+        {{ form_end(form) }}
     </div>
 {% endblock %}

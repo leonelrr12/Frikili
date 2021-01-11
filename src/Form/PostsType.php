@@ -17,7 +17,7 @@ class PostsType extends AbstractType
         $builder
             ->add('titulo')
             ->add('foto', FileType::class, [
-                'label' => 'Solo jpeg|jpg|png',
+                'label' => 'Solo jpeg | jpg | png',
                 'mapped' => false,
                 'required' => false,
             ])
